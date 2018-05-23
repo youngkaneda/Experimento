@@ -28,7 +28,7 @@ public class ClientTCC {
 
     public static void main(String[] args) {
         Project project = Project
-                .root("../estudo-de-casos/axion-1.0-M2/")
+                .root("../estudo-de-casos/jgrapht-0.8.1/")
                 .path("src/")
                 .sources("src/")
                 .filter(".java");
