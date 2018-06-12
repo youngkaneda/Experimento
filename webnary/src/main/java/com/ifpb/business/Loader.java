@@ -11,6 +11,6 @@ package com.ifpb.business;
  */
 public class Loader {
     public static void main(String[] args) {
-        RandomChoiceCreator.getAlternatives().forEach(System.out::println);
+        RandomChoiceCreator.getAlternatives(1).forEach(System.out::println);
     }
 }
