@@ -34,9 +34,8 @@ public class RandomChoiceCreator {
         }
         JsonArray method_types = object.getAsJsonArray("method_types");
         randomCollectMethod(collectedMethods, method_types.size(), correctMethodId, method_types);
-        while(collectedMethods.size() < 6){
-            randomCollectMethod(collectedMethods, 7-method_types.size(), 0, method_types);
-            System.out.println("travei");
+        while (collectedMethods.size() < 7) {
+            randomCollectMethod(collectedMethods, 7 - collectedMethods.size(), -1, method_types);
         }
         return collectedMethods.stream().collect(Collectors.toList());
     }
@@ -46,19 +45,21 @@ public class RandomChoiceCreator {
             throw new RuntimeException("number of choices is greater than methodsType array");
         }
         Set<Integer> visitedArrayIds = new HashSet<>();
-        visitedArrayIds.add(0);
+        visitedArrayIds.add(-1);
         Random random = new Random();
         JsonObject tempObj;
         JsonArray tempArray;
         int count = 0;
-        while (!visitedArrayIds.contains(correctMethodId) && count < numberOfChoices) {
+        while (count < numberOfChoices) {
             int nextInt = random.nextInt(methodTypesJson.size());
             boolean added = visitedArrayIds.add(nextInt);
-            if(!added)
-                continue;
+            if (!visitedArrayIds.contains(correctMethodId) && collectedMethods.size() == numberOfChoices - 1) {
+                if(correctMethodId != -1)
+                    continue;
+            }
             tempObj = methodTypesJson.get(nextInt).getAsJsonObject();
-            tempArray = tempObj.getAsJsonArray("methods");
-            collectedMethods.add(tempObj.get("method_type")+":"+tempArray.get(random.nextInt(tempArray.size())).getAsString());
+            tempArray = tempObj.getAsJsonArray("methods");  
+            collectedMethods.add(tempArray.get(random.nextInt(tempArray.size())).getAsString());
             count++;
         }
     }
