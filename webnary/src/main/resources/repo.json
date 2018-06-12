@@ -1,0 +1,29 @@
+{
+    "method_types": [
+        {
+            "_id": 0,
+            "method_type": "adicao",
+            "methods": ["add", "addAll", "set", "put", "putAll"]
+        },
+        {
+            "_id": 1,
+            "method_type": "remocao",
+            "methods": ["clear", "remove", "removeAll", "retainAll"]
+        },
+        {
+            "_id": 2,
+            "method_type": "busca",
+            "methods": ["contains", "containsAll", "get", "indexOf", "lastIndexOf", "listIterator", "subList", "size"]
+        },
+        {
+            "_id": 3,
+            "method_type": "edicao",
+            "methods": ["sort", "replaceAll"]
+        },
+        {
+            "_id": 4,
+            "method_type": "acesso",
+            "methods": ["equals", "isEmpty", "iterator", "hashcode", "listIterator", "toArray"]
+        }
+    ]
+}
