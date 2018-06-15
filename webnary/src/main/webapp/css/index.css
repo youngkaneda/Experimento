@@ -1,0 +1,27 @@
+#text {
+    text-align: justify;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
+#form_area {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+
+#form_area > form > input {
+    margin: 0 auto;
+    display: block;
+}
+
+#main {
+    width: 35%;
+    margin: 0 auto;
+    display: block;
+    padding: 1%;
+    border: 2px solid black;
+    margin-top: 12%;
+    border-radius: 0.8%;
+}

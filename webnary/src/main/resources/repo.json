@@ -25,5 +25,12 @@
             "method_type": "acesso",
             "methods": ["equals", "isEmpty", "iterator", "hashcode", "listIterator", "toArray"]
         }
+    ],
+    "questions": [
+        "Quais destes metodos voce considera como metodos de adicao?",
+        "Quais destes metodos voce considera como metodos de remocao?",
+        "Quais destes metodos voce considera como metodos de busca?",
+        "Quais destes metodos voce considera como metodos de edicao?",
+        "Quais destes metodos voce considera como metodos de acesso?"
     ]
 }

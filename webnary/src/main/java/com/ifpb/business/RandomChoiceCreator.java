@@ -34,8 +34,8 @@ public class RandomChoiceCreator {
         }
         JsonArray method_types = object.getAsJsonArray("method_types");
         randomCollectMethod(collectedMethods, method_types.size(), correctMethodId, method_types);
-        while (collectedMethods.size() < 7) {
-            randomCollectMethod(collectedMethods, 7 - collectedMethods.size(), -1, method_types);
+        while (collectedMethods.size() < 5) {
+            randomCollectMethod(collectedMethods, 5 - collectedMethods.size(), -1, method_types);
         }
         return collectedMethods.stream().collect(Collectors.toList());
     }
