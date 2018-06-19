@@ -1,4 +1,5 @@
 #text {
+    padding-top: 2.5%;
     text-align: justify;
     width: 90%;
     margin: 0 auto;
@@ -6,22 +7,23 @@
 }
 
 #form_area {
+    padding-top: 6%;
     width: 90%;
     margin: 0 auto;
     display: block;
 }
 
-#form_area > form > input {
+#form_area > form > button {
     margin: 0 auto;
     display: block;
 }
 
 #main {
+    background-color: #e6eceb;
     width: 35%;
     margin: 0 auto;
     display: block;
     padding: 1%;
-    border: 2px solid black;
     margin-top: 12%;
     border-radius: 0.8%;
 }

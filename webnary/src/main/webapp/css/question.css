@@ -1,0 +1,28 @@
+#main > div {
+    margin: 0 auto;
+    display: block;
+}
+
+.option {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#main {
+    padding-top: 2%; 
+}
+
+#text {
+    background-color: #e6eceb;
+    border-radius: 0.8%;
+    font-size: 17px;
+    padding: 0.2% 1% 0.2% 1%;
+    text-align: justify;
+    width: 35%;
+    margin: 0 auto;
+    display: block;
+}
+
+body {
+    padding-top: 3.5%;
+}

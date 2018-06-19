@@ -29,6 +29,10 @@ public class Developer {
         return questions;
     }
     
+    public Question getQuestion(int index) {
+        return questions.get(index);
+    }
+    
     public boolean addQuestion(Question question) {
         return this.questions.add(question);
     }

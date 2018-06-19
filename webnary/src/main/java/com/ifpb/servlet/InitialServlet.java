@@ -49,8 +49,10 @@ public class InitialServlet extends HttpServlet {
         }
         
         session.setAttribute("dev", dev);
+        int count = 0;
+        session.setAttribute("questionCount", count);
         
-        session.setAttribute("fullQuestions", fullQuestions);
+        req.setAttribute("question", dev.getQuestion(count));
         
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/questions.jsp");
         try {

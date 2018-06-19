@@ -26,11 +26,18 @@ public class DeveloperAnswerServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) {
         String[] checkeds = req.getParameterValues("check");
-        String question = req.getParameter("question");
         HttpSession session = req.getSession();
         Developer dev = (Developer) session.getAttribute("dev");
-        dev.addAnswers(question, Arrays.asList(checkeds));
-        session.setAttribute("dev", dev);
+        if(checkeds != null) {
+            String question = req.getParameter("question");
+            dev.addAnswers(question, Arrays.asList(checkeds));
+            session.setAttribute("dev", dev);    
+        }
+        int count = (Integer) session.getAttribute("questionCount");
+        if(count < 4 && checkeds != null)
+            count++;
+        req.setAttribute("question", dev.getQuestion(count));
+        session.setAttribute("questionCount", count);
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/questions.jsp");
         try {
             requestDispatcher.forward(req, res);
