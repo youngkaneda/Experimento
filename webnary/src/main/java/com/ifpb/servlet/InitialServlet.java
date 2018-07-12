@@ -5,6 +5,8 @@
  */
 package com.ifpb.servlet;
 
+import com.ifpb.business.GithubAuth;
+import com.ifpb.business.HttpRequest;
 import com.ifpb.business.QuestionsConverter;
 import com.ifpb.business.RandomChoiceCreator;
 import com.ifpb.model.Developer;
@@ -26,19 +28,31 @@ import javax.servlet.http.HttpSession;
  *
  * @author kuuhaku
  */
-@WebServlet("/answer")
+@WebServlet("/callback")
 public class InitialServlet extends HttpServlet {
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse res) throws UnsupportedEncodingException {
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws UnsupportedEncodingException, IOException {
+
+//        GithubAuth github = (GithubAuth) req.getSession().getAttribute("github");
+//        String code = req.getParameter("code");
+//        String url = github.getUrlToken();
+//        System.out.println("->"+ github);
+//        HttpRequest request = new HttpRequest(url);
+//        String retorno = request.read(github.toParams(code));
+//        res.setContentType("application/json");
+//        res.getWriter().println(retorno);
+
+        if(req.getParameter("code") == null)
+            res.sendRedirect("index.html");
 
         res.setContentType("text/html;charset=UTF-8");
         req.setCharacterEncoding("UTF-8");
 
         HttpSession session = req.getSession();
-        
-        Developer dev = new Developer("kaneda");
-        
+
+        Developer dev = new Developer("?");
+
         List<String> questions = QuestionsConverter.getStringQuestions();
         Map<String, List<String>> fullQuestions = new HashMap<>();
 
@@ -47,16 +61,16 @@ public class InitialServlet extends HttpServlet {
             fullQuestions.put(questions.get(i), alternatives);
             dev.addQuestion(new Question(questions.get(i), alternatives));
         }
-        
+
         session.setAttribute("dev", dev);
         int count = 0;
         session.setAttribute("questionCount", count);
-        
+
         req.setAttribute("question", dev.getQuestion(count));
-        
+
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/questions.jsp");
         try {
-            
+
             requestDispatcher.forward(req, res);
         } catch (ServletException | IOException ex) {
             throw new RuntimeException(ex.getMessage());
