@@ -12,7 +12,7 @@ package com.ifpb.business;
 public class GithubAuth {
 
     private final String client_authorize = "http://github.com/login/oauth/authorize";
-    private final String client_token = "http://github.com/login/oauth/access_token";
+    private final String client_token = "https://github.com/login/oauth/access_token";
     private final String client_id, client_secret, redirect_uri;
 
     public GithubAuth(String client_id, String client_secret, String redirect_uri) {
@@ -29,6 +29,8 @@ public class GithubAuth {
     public String toParams(String code) {
         return String.format("client_id=%s&client_secret=%s&redirect_uri=%s&code=%s",
                 client_id, client_secret, redirect_uri, code);
+//        return String.format("client_id=%s&client_secret=%s&code=%s",
+//                client_id, client_secret, code);
     }
 
     public String getUrlToken() {
