@@ -19,8 +19,18 @@
             <url>file:${pom.basedir}/repo</url>
         </repository>
     </repositories>
-
+    
     <dependencies>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>    
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
         <dependency>
             <groupId>net.thegreshams</groupId>
             <artifactId>firebase4j</artifactId>

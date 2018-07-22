@@ -2,35 +2,35 @@
     "method_types": [
         {
             "_id": 0,
-            "method_type": "adicao",
+            "method_type": "addition",
             "methods": ["add", "addAll", "set", "put", "putAll"]
         },
         {
             "_id": 1,
-            "method_type": "remocao",
+            "method_type": "removal",
             "methods": ["clear", "remove", "removeAll", "retainAll"]
         },
         {
             "_id": 2,
-            "method_type": "busca",
-            "methods": ["contains", "containsAll", "get", "indexOf", "lastIndexOf", "listIterator", "subList", "size"]
+            "method_type": "search",
+            "methods": ["contains", "containsAll", "get", "indexOf", "lastIndexOf", "subList", "size"]
         },
         {
             "_id": 3,
-            "method_type": "edicao",
+            "method_type": "edit",
             "methods": ["sort", "replaceAll"]
         },
         {
             "_id": 4,
-            "method_type": "acesso",
+            "method_type": "access",
             "methods": ["equals", "isEmpty", "iterator", "hashcode", "listIterator", "toArray"]
         }
     ],
     "questions": [
-        "Quais destes metodos voce considera como metodos de adicao?",
-        "Quais destes metodos voce considera como metodos de remocao?",
-        "Quais destes metodos voce considera como metodos de busca?",
-        "Quais destes metodos voce considera como metodos de edicao?",
-        "Quais destes metodos voce considera como metodos de acesso?"
+        "Which of these methods do you consider as addition methods?",
+        "Which of these methods do you consider as removal methods?",
+        "Which of these methods do you consider as search methods?",
+        "Which of these methods do you consider as edit methods?",
+        "Which of these methods do you consider as access methods?"
     ]
 }
