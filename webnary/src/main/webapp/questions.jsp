@@ -15,13 +15,12 @@
     <body>
         <div id="text" class="z-depth-2">
             <blockquote>
-                Este questionário tem como intuito validar, através da ajuda de densevolvedores respondendo a um breve questionário, a categorização
-                dos métodos de algumas coleções do framework <b>JCF</b> (<b>J</b>ava <b>C</b>ollections
-                <b>F</b>ramework) para um Tabalho de Conclusão de Curso, as categorias foram definidas como: <i>(i)adição</i>, <i>(ii)remoção</i>,
-                <i>(iii)busca</i>, <i>(iv)edição</i> e <i>(v)acesso</i>.
-                O questionário consiste em cinco questões com sete alternativas geradas aleatoriamente, dentro do conjunto de
-                métodos considerados, você deverá selecionar as alternativas que acha que pertencem a categoria informada na
-                questão.
+                This questionnaire aims to validate, through the help of developers responding to a brief questionnaire, 
+                the categorization of the methods of some collections of the <b>JCF</b> framework (<b>J</b>ava <b>C</b>ollections 
+                <b>F</b>ramework) for a final paper, the categories were defined as: <i>(i)</i> addition <i>(ii)</i> search 
+                , <i>(iv)</i> edit, <i>(ii)</i> removal, and <i>(v)</i> access. The questionnaire consists of five questions
+                with seven alternatives generated randomly, within the set of methods considered, you should select the 
+                alternatives that you think belong to the category informed in the question.
             </blockquote>
         </div>
         <div id="main">
@@ -46,13 +45,13 @@
                         <c:choose>
                             <c:when test="${!dev.allQuestionsAnswered()}">
                                 <button class="btn waves-effect waves-light" type="submit" name="action" style="margin-left:75%;" id="sendButton">
-                                    próximo
+                                    Next
                                     <i class="material-icons right">send</i>
                                 </button>
                             </c:when>
                             <c:otherwise>
                                 <button class="btn waves-effect waves-light" type="submit" name="action" style="margin-left:75%;" id="sendButton" disabled>
-                                    próximo
+                                    Next
                                     <i class="material-icons right">send</i>
                                 </button>
                             </c:otherwise>
@@ -65,12 +64,12 @@
             <c:choose>
                 <c:when test="${!dev.allQuestionsAnswered()}">
                     <button class="btn-large waves-effect waves-light" type="submit" name="action" disabled style="margin:0 auto; display:block;">
-                        Concluir
+                        Complete
                     </button>
                 </c:when>
                 <c:otherwise>
                     <button class="btn-large waves-effect waves-light" type="submit" name="action" style=" margin: 0 auto; display: block;">
-                        Concluir
+                        Complete
                     </button>
                 </c:otherwise>
             </c:choose>

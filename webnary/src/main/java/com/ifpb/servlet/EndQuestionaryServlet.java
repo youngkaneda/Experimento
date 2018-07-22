@@ -8,8 +8,11 @@ package com.ifpb.servlet;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ifpb.model.Developer;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,6 +45,12 @@ public class EndQuestionaryServlet extends HttpServlet {
         } catch (JsonProcessingException ex) {
             throw new RuntimeException(ex.getMessage());
         } catch (FirebaseException | UnsupportedEncodingException ex) {
+            throw new RuntimeException(ex.getMessage());
+        }
+
+        try {
+            res.sendRedirect("end.html");
+        } catch (IOException ex) {
             throw new RuntimeException(ex.getMessage());
         }
     }

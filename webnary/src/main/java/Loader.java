@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.ifpb.business;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.ifpb.business.RandomChoiceCreator;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -17,12 +13,24 @@ import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 /**
  *
  * @author kuuhaku
  */
-public class RandomChoiceCreator {
+public class Loader {
+
     private static Random rng = new Random();
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(getAlternatives(i));
+        }
+    }
 
     public static List<String> getAlternatives(int index) {
         Set<String> collectedMethods = new HashSet<>();
